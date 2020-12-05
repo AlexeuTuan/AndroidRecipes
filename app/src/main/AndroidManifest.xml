@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.chargecontrol">
 
+    <permission android:name="com.bignerdranch.android.photogallery.PRIVATE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.bignerdranch.android.photogallery.PRIVATE" />
     <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
@@ -19,9 +23,9 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".StartupReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.CONFIGURATION_CHANGED"/>
+        <receiver android:name=".StartupReceiver" android:exported="false">
+            <intent-filter android:priority="-999">
+                <action android:name="com.bignerdranch.android.photogallery.SHOW_NOTIFICATION"/>
             </intent-filter>
         </receiver>
     </application>
