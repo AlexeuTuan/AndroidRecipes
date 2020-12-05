@@ -1,4 +1,4 @@
-package com.example.chargecontrol;
+package com.example.apps;
 
 import android.content.Context;
 

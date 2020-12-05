@@ -1,14 +1,12 @@
-package com.example.chargecontrol;
+package com.example.apps.chargecontrol;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.apps.R;
 
 public class MyFragment extends VisibleFragment {
 
@@ -41,8 +39,5 @@ public class MyFragment extends VisibleFragment {
     @Override
     public void onResume() {
         super.onResume();
-        Intent i = new Intent(ACTION_SHOW_NOTIFICATION);
-        getActivity().sendOrderedBroadcast(i, PERM_PRIVATE, new StartupReceiver(), null,
-                Activity.RESULT_OK, null, null);
     }
 }
